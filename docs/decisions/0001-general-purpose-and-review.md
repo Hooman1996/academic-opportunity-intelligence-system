@@ -1,3 +1,5 @@
+> Historical decision proposal from 24 October 2026. Superseded by [Decision 0002](0002-final-runtime-storage-and-scope.md) and [Plan v2](../architecture/implementation-plan-v2.md), including private findings, four required surfaces and final owner instructions. Original wording below is retained for traceability, not authorization.
+
 # Decision 0001: reusable candidate-driven AOIS and shared review
 
 Date: 24 October 2026. Status: proposed design refinement; user requested direction, ChatGPT author review complete, Claude review pending. No implementation or public release is approved by this record.

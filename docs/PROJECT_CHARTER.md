@@ -1,6 +1,6 @@
 # AOIS project charter
 
-Date: 24 October 2026. Status: shared planning proposal for ChatGPT and Claude review. Product direction is user-authorized; individual implementations and release gates are not authorized by this document.
+Finalized: 25 October 2026 under Implementation Plan v2. Planning is closed after the reconciled manager reviews and owner requirements. Individual implementation tasks and actions still require their bounded authorization.
 
 ## Purpose and users
 
@@ -8,7 +8,7 @@ Build a professional academic opportunity intelligence workbench and a reusable 
 
 The maintainer's private profile is the first real acceptance case. Other students and researchers must be able to use the same core with their own data and goals. Initial field content is strongest in AI, vision, remote sensing, spatial science, geometry, robotics, LLMs and agents. Additional disciplines use reviewed field packs; being configurable does not establish tested competence in every discipline.
 
-The complete product retains the earlier architecture's discovery, enrichment, comparison, deep-dive, outreach, application and monitoring scope. Sharing skills is a second delivery form of the same research process. It does not require building a hosted multi-tenant service.
+The complete product retains discovery, enrichment, comparison, deep dives, outreach preparation, application management, cloud weekly monitoring and later explicit messenger/email notifications. Sharing skills is a second delivery form of the same research process. Support Codex desktop, Claude Code desktop, ChatGPT web and Claude web using the same procedures and compatible private bundles. A hosted multi-tenant service is not required.
 
 “Complete” means a professional, auditable process with explicit scope, unresolved gaps and preserved evidence. No internet search can certify that every person or opportunity has been found. Coverage-complete is a scope/as-of claim with strict gates, never a marketing guarantee.
 
@@ -26,7 +26,7 @@ The complete product retains the earlier architecture's discovery, enrichment, c
 
 A CV is optional for broad institutional discovery. Private profile approval is required for personalized factual claims and eligibility conclusions. Extracted CV statements remain self-reported unless independently corroborated. Do not infer citizenship, immigration status, degree equivalence, attained language scores or publication status.
 
-Collect only details needed for the chosen route. Default external queries use topical concepts and necessary public institution/person information, not full CV text, contact details or private identifiers. Show meaningful data-transmission choices before a workflow sends sensitive documents to a new service.
+The owner authorizes sending the CV and investigation content to the OpenAI and Claude models performing the work. No vendor-training opt-out or model-context-minimization prerequisite applies. Keep secrets outside context. Search/retrieval APIs receive short task-appropriate queries. This permission does not authorize public publication or unrelated external disclosure.
 
 Each profile and run has an owner/namespace and version. Profiles, candidate-dependent caches, assessment records, watch definitions, drafts and application state must remain isolated. A second user or an updated CV cannot inherit the first user's private judgments, credentials or conclusions.
 
@@ -34,7 +34,7 @@ Each profile and run has an owner/namespace and version. Profiles, candidate-dep
 
 Build an inspectable query plan from two distinct inputs: demonstrated methods/background and user-directed interests. Keep original labels, evidence, uncertain extraction and aspirations separate.
 
-Expand through:
+Use predefined field vocabularies and expand through:
 
 - exact aliases, spelling variants and original-language equivalents;
 - broader and narrower concepts with explicit relationships;
@@ -45,6 +45,8 @@ Expand through:
 - evidence-driven new terminology found during the investigation.
 
 For example, computer vision can lead to image analysis, reconstruction, computational imaging, robotics and perception. Remote sensing can lead to EO, radar/SAR/InSAR, spectroscopy, LiDAR, photogrammetry, environmental sensing and spatial modelling. LLMs/agents can lead to retrieval, planning, tool use, evaluation, grounded multimodal systems and embodied intelligence. These are technical examples, not facts about a particular applicant.
+
+OpenAlex topics, Wikidata labels, ESCO and other reviewed sources may seed field vocabulary proposals. No embedding pipeline, vector/semantic similarity matching or semantic-search feature is planned at any stage. Routine run-local expansions are logged; global field-pack changes are reviewed.
 
 Record each expansion's seed, relation, rationale/source, language, query, channel and investigated scope. Search AI/CV and geospatial branches independently; do not require every researcher to use all seed terms. Avoid unqualified acronym queries and rigid conjunctions. Uncertain matches enter the inventory; later comparison can distinguish stronger and weaker connections.
 
@@ -86,14 +88,14 @@ Discover first; compare afterwards. Keep research compatibility, present opportu
 
 The final output set is:
 
-1. A detailed university dossier with scope, organizational map, inventory, current routes, historical signals and cited application guidance.
-2. Structured reusable institutional records and claim/evidence relationships.
+1. A polished generated self-contained HTML university dossier with summary first, sortable/filterable researcher and opportunity tables, current/history/deadline views, coverage/gaps and clickable evidence. Bundle its assets, escape untrusted content, validate links and support keyboard/multilingual use.
+2. Private structured JSON institutional records and claim/evidence relationships, plus a formula-safe CSV view from the same revision; XLSX follows later.
 3. A coverage audit with denominators, successful versus blocked checks, missing branches, mapping confidence and as-of dates.
 4. Private candidate-specific comparisons, uncertainties and next actions.
 5. A durable private checkpoint with versions, hashes, owner, work queue, cursors, budgets and exact resume context.
-6. Public-safe exports when deliberately accepted, plus private human-readable/downloadable views as appropriate.
+6. Private human-readable/downloadable HTML/CSV views from each accepted private bundle. Public Git receives no real investigation exports.
 
-Public publication is a separate choice. Discovery facts that are public on the web do not automatically authorize bulk redistribution or publishing private search intent.
+All real CV/profile/researcher/opportunity findings, dossiers, queries, evidence caches and assessments stay in private local storage and/or private Drive. They are never committed to the system repository. Git contains reusable definitions, code, synthetic tests and development/release documentation.
 
 ## Later work retained in full scope
 
@@ -101,16 +103,18 @@ Selected researcher deep dives inspect a small justified paper/project set with 
 
 Application planning tracks linked admissions/employment/funding processes, document versions, references, deadlines, interviews, replies and outcomes. Calendar and spreadsheet views are projections, not competing databases. No fabricated legal, immigration, tax or credential-equivalence certainty.
 
-Weekly checks include both known-page comparison and new-URL discovery for calls, deadlines, funding conditions, researchers, labs, grants and relevant history. Persist last successful baselines, semantic before/after evidence, deduplication, source health, costs and no-change run status. Failed extraction cannot replace a successful baseline. One scheduler; reviewed dry runs and explicit activation before live watches.
+Weekly cloud checks, which must run with local machines off, include both known-page comparison and new-URL discovery for calls, deadlines, funding conditions, researchers, labs, grants and relevant history. Persist last successful baselines, meaningful before/after field/text evidence, deterministic event deduplication, source health, costs and no-change run status. Failed extraction cannot replace a successful baseline. One scheduler; reviewed dry runs and explicit activation before live watches.
 
 ## Distribution, operation and success
 
-Use a field-neutral core, reviewed domain/country packs and one canonical skill source. Start with file-based single-writer runs and manual pinned workflow bundles. Later build versioned packages, onboarding and client adapters for tested Codex, ChatGPT and Claude surfaces. Expose capabilities and limitations per surface; no universal compatibility claim from SKILL.md alone.
+Use a field-neutral core, reviewed field/country packs and one canonical skill source. AGENTS.md is the only repository-level agent instruction file: no CLAUDE.md or CLAUDE.local.md. Author skills in .agents/skills and generate client/web packages; verify actual direct AGENTS support in Claude. Test all four required surfaces, including private save and fresh-chat restore, before full release. Manual pinned procedure bundles are an initial declared mode, not automatic activation.
+
+Use a private local root outside the checkout and private Drive for web continuity. Each institution has one active writable authority. Transfer verified revisioned checkpoints with an owner/epoch handoff and freeze the source; no blind two-way sync. Cloud watches write unique run/proposal areas against cloud baselines, not an active local master. No timeout-only takeover. Back up local data off-disk and test restore.
 
 No AOIS hosted service is necessary for independent users. Each installation brings its own approved tools, private storage and credentials. Review authentication/tenant isolation before any future shared hosted operations. Add PostgreSQL, remote MCP or workers only for measured needs and approved cost/access/recovery plans.
 
-The initial reusable workflow adds aois-candidate-intake and aois-query-plan to the original five investigation procedures: aois-institution-map, aois-researcher-discovery, aois-opportunity-intelligence, aois-research-audit and aois-university-investigation. Later procedures remain aois-researcher-deep-dive, aois-outreach-prepare, aois-application-tracker and aois-university-watch. These are planned responsibilities, not installed skills. The orchestrator follows approved procedures/resources; it does not assume an automatic nested-skill API.
+The finalized reusable workflow adds aois-candidate-intake and aois-query-plan to the original five investigation procedures: aois-institution-map, aois-researcher-discovery, aois-opportunity-intelligence, aois-research-audit and aois-university-investigation. Later procedures remain aois-researcher-deep-dive, aois-outreach-prepare, aois-application-tracker and aois-university-watch. These are planned responsibilities, not installed skills. The orchestrator follows approved procedures/resources; it does not assume an automatic nested-skill API.
 
 Success requires independently audited university coverage, no unsupported actionable openings, safe identities, interruption/resumption/restore, private-data isolation, broad recovery under changed interests, and improvements measured against credible held-out references. Add synthetic profiles beyond the initial technical domain before broad distribution claims. Record recall, errors, source health, costs, time and uncertainty; never invent achieved performance.
 
-See [feature coverage](FEATURE_COVERAGE.md), [roadmap](ROADMAP.md), [detailed baseline](architecture/implementation-blueprint-v1.md), and [review protocol](manager/OPERATING_PROTOCOL.md).
+See [feature coverage](FEATURE_COVERAGE.md), [roadmap](ROADMAP.md), [Implementation Plan v2](architecture/implementation-plan-v2.md), and [review protocol](manager/OPERATING_PROTOCOL.md). Specific repository-backed Codex Cloud environments are optional evaluated routes; web execution is explicitly supported. All additional service spending remains $0 unless separately approved.

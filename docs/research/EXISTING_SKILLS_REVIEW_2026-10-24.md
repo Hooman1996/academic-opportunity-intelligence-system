@@ -1,3 +1,5 @@
+> Source survey dated 24 October 2026; this is an evaluation queue, not authorization to install or import upstream components. Apply [Plan v2](../architecture/implementation-plan-v2.md): no embeddings/similarity feature, no real findings in Git, model context is owner-authorized, and all four client surfaces are required. No outdated upstream prerequisite overrides owner instructions.
+
 # Existing skills and reuse assessment
 
 Researched: 24 October 2026. Scope: targeted public web discovery followed by original GitHub source, revision and license inspection. This is a bounded landscape review, not proof that all existing skills were found.

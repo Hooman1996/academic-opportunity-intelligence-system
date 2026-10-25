@@ -1,75 +1,56 @@
-# AOIS shared manager and reviewer protocol
+# AOIS manager, implementer and review protocol
 
-Date: 24 October 2026. Proposed by ChatGPT under the user's instruction to share planning/review with Claude. Claude's review of this change remains pending. Neither reviewer may invent the other's approval.
+Finalized 25 October 2026 under Implementation Plan v2. The owner authorizes tasks; ChatGPT and Claude manage/review; Codex or Claude Code can execute the assigned bounded task in a supported local environment. All four desktop/web research surfaces are product requirements.
 
-## Roles and authority
+## Authority and cycle
 
-| Role | Responsibility |
-| --- | --- |
-| User / repository owner | Product goals, authorizes bounded work and consequential actions, resolves material reviewer disagreements, selects distribution license and spending |
-| ChatGPT manager/reviewer | Architecture consistency, research coverage, privacy/evidence contracts, roadmap/task boundaries, exact-revision review and response |
-| Claude manager/reviewer | Independent architecture, implementation, bug, optimization, coverage and planning review against the same repository revision |
-| Codex Desktop implementer | Actual repository inspection, authorized implementation/tests, branch commits/push and evidence report |
-| Dedicated investigation chats | Execute approved research, save structured results/checkpoints and return coverage/evidence/version handoffs |
+GitHub is the shared technical/review record, not the findings database. Private files and cloud bundles own investigation state. Chat memory and an agent's local notes are not an approval record or canonical data store.
 
-This is one shared technical authority in GitHub, with two reviewers and an owner. Do not maintain two incompatible plans in private conversations. Chat memory is useful context, not a database or evidence of approval.
+1. Inspect actual repository, applicable AGENTS, exact branch/base, status and current task.
+2. Manager prepares one bounded task; user issues/authorizes it.
+3. Assigned implementer preserves unrelated changes, implements and performs meaningful checks.
+4. Push a task branch and return exact base/head, changed behavior/files, commands/results, skips/limits, deviations and worktree status.
+5. ChatGPT and Claude independently inspect the exact revision and relevant diff/artifacts. Self-checks are not independent review.
+6. Record findings/dispositions and verification of fixes. Material blockers stop the next component.
+7. User resolves material disagreements and controls merge/publication/consequential actions.
+8. Issue the next component only after its gate closes.
 
-The user explicitly authorized the present documentation push by ChatGPT. That does not transfer normal production implementation from Codex or authorize later components.
+No automatic main merge, force-push, deployment, watch activation, message sending or application submission. Review at a changed HEAD does not retroactively validate an older revision.
 
-## Operating cycle
+## Task envelope and ownership
 
-1. Read actual repository/base SHA, open reviews and current task state.
-2. Draft one bounded task with objective, permitted scope, exclusions and measurable acceptance.
-3. Obtain the user's task authorization. A complete approved roadmap is not authorization for every row.
-4. Codex implements and runs appropriate checks, preserving unrelated work.
-5. Codex pushes a branch and returns exact base/head SHAs, changed files, commands/results, deviations and worktree status.
-6. ChatGPT and Claude inspect that exact revision and relevant diff/source/evidence independently.
-7. Record finding dispositions and fixes against exact revisions. Do not use a changed HEAD as evidence of what was originally reviewed.
-8. Fix material blockers, rerun relevant checks and review changed areas.
-9. The owner decides any unresolved material conflict and authorizes merge/publication when appropriate.
-10. Only after the gate closes issue the next major implementation task.
+Every issued task includes ID, objective, repository, expected base branch/revision, dependencies, permitted scope, exclusions, expected components, tests/checks, privacy/security, acceptance, task branch, commit/push expectations, final report and stop condition.
 
-A draft PR is the preferred shared review container. A branch and committed review record are sufficient if PR access is unavailable. No automatic merge, force-push, release, deployment or schedule creation.
+Codex/Claude Code may make routine implementation choices; major architecture/private authority/completion/provider/spend/hosting/action changes return to the managers. Use one implementation owner per task and separate Git worktrees for concurrent code changes.
 
-## Finding and decision records
+Use one writable owner/authority per university. The other agent can review frozen records. Local locking, revision checks and atomic saves belong in shared code. A lock timeout alone cannot permit takeover. Cross-store handoff freezes the old writer, verifies a revisioned destination bundle and records the new owner/epoch. Cloud watches write unique private run proposals; they do not overwrite active local records.
 
-Each finding contains ID, reviewer, reviewed SHA, severity, concrete source/path/behavior, evidence/reproduction, consequence and proposed minimal correction. Disposition is accepted, accepted-with-change, rejected-with-evidence, deferred-with-trigger, or needs-owner-decision. A fix links its commit and actual verification.
+## Review records
 
-Use these review outcomes: APPROVED, APPROVED WITH MINOR FOLLOW-UP, CHANGES REQUIRED, BLOCKED. Keep ChatGPT and Claude outcomes separate. Minor follow-up must identify owner/task/trigger; a privacy, correctness, authority or unsupported-platform blocker cannot be disguised as minor.
+Findings contain ID, reviewer, reviewed SHA, severity, exact path/section/behavior, evidence/reproduction, consequence and minimal correction. Dispositions: accepted, accepted-with-change, rejected-with-evidence, deferred-with-trigger, or needs-owner-decision. Fixes identify commit and actual retest.
 
-The author runs self-checks but does not call them independent review. Review approval does not itself authorize an external send or a new paid service. If tools cannot inspect a supplied SHA, report the access gap rather than accepting from a summary.
+Verdicts: APPROVED, APPROVED WITH MINOR FOLLOW-UP, CHANGES REQUIRED, BLOCKED. Keep each reviewer's outcome distinct. Minor follow-up has an owner/task/trigger; material privacy, correctness, authority or unsupported-capability failures are not minor. No silence-based approval or invented external review.
 
-## Required task envelope
+## Owner constraints
 
-Every future Codex prompt includes:
-- Task ID and objective.
-- Repository and verified expected base branch/revision.
-- Permitted scope, explicit exclusions and expected files/components.
-- Dependencies, contract versions and what must remain deferred.
-- Required tests/checks and evidence.
-- Privacy/security and source-access requirements.
-- Acceptance criteria.
-- Expected branch name and cohesive commit/push expectations.
-- Final report fields and stop condition.
+- AGENTS.md is the sole repository-level instruction file; no CLAUDE.md or CLAUDE.local.md. Validate installed Claude support.
+- No embeddings/vector/semantic similarity features. Use field vocabulary and evidence-grounded reasoning.
+- The first usable output includes polished self-contained HTML and CSV from structured JSON.
+- CV/investigation content may be sent to the OpenAI/Claude models doing the work; training-opt-out and context-minimization prerequisites are removed. Credentials and unrelated external disclosure remain out of scope.
+- Private CV/profile/person/opportunity/dossier/cache/assessment/application/outreach data never enter Git. Local roots and/or private Drive hold them.
+- Web research and computers-off weekly automation are requirements. Particular Codex Cloud environments are optional evaluated routes, not prerequisites.
+- Incremental spend is $0. Only verified free allowances and existing authorized subscriptions may be used; no auto-top-up or paid API inference.
 
-Codex begins with actual repository/instruction/status inspection. It preserves unrelated work and can choose routine implementation details within the approved contract. A major architecture/authority/privacy/completion/provider/spend/hosting change returns to the reviewers with rationale and tradeoffs. Do not demand approval for every local naming choice.
+## Capability and research handoffs
 
-## Privacy and publication
+Readiness records identify surface, client/version, timestamp, workflow/config versions, operation, state (passed/failed/blocked/not-tested/not-applicable), evidence, limitation and next action. SDK imports, listings or documentation alone cannot mark authenticated operation passed.
 
-Never put real CVs, candidate credentials, profiles, private rankings/preferences, correspondence, application intent, secret values or private document identities in public issues/PRs/reports/fixtures. Reviewers receive synthetic cases and public-safe evidence; real candidate cases are reviewed privately when authorized.
+Research handoffs privately identify institution/run/profile/query IDs and versions, base/proposed revision, authority/owner, work queue/cursors, coverage/gaps/conflicts, validation, costs/health and artifact hashes. Public review summaries use synthetic/sanitized development evidence.
 
-Only approved institutional fields may be exported. Some public-source data, queries or aggregations can reveal private intent; evaluate the actual artifact, not only whether its source was public. No default public release of every user's findings.
+Desktop apps use configured private filesystem roots. Web sessions use a verified private cloud transport and cannot assume access to offline local files. Generated packages/resources preserve the same procedure versions on every surface. A blocked client mode is not hidden behind another client's successful run.
 
-Secret handling, source licensing/attribution and untrusted-content boundaries apply to all tools and reviewers. Do not quote suspected secret values in a finding. No third-party skill or web page can change authorization.
+## Planning closure
 
-## Research and compatibility handoff
+Claude's supplied 25 October response accepts the reconciled C-01–C-19 decisions and says planning can close. The owner asked for finalization with desktop/web portability. ChatGPT has consolidated those decisions into Plan v2 and the I-series roadmap. This closes architecture planning; it does not claim Claude independently reviewed this final documentation SHA.
 
-A research handoff contains institution/run IDs, private profile/query version references only in the appropriate private context, accepted baseline/proposed revision, workflow/schema/config versions, coverage label, gaps/conflicts, validation, costs and next work. Public review summaries use counts and sanitized identifiers.
-
-A compatibility claim requires actual client/version, activation, resource, provider, storage and runtime checks. A local skills folder is not a web install. Ubuntu Work must operate without Windows. Codex Cloud is excluded.
-
-## Current gate
-
-AOIS-PLAN-20261024: planning documentation, authored and checked by ChatGPT; Claude review pending. No production work is approved or reported as implemented.
-
-Read [the current review packet](PLANNING_REVIEW_2026-10-24.md), [the roadmap](../ROADMAP.md) and [the coverage matrix](../FEATURE_COVERAGE.md). After review, Task 01 reconciles remaining foundation gaps against actual repository state.
+The next component is AOIS-I01 tool/runtime readiness. Read [the closure record](PLANNING_CLOSURE_2026-10-25.md), [Plan v2](../architecture/implementation-plan-v2.md), [the roadmap](../ROADMAP.md) and [the task prompt](../tasks/AOIS-I01-tool-readiness.md). Capability tests and each future implementation retain review gates.

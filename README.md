@@ -1,49 +1,60 @@
 # Academic Opportunity Intelligence System (AOIS)
 
-AOIS is a planned, evidence-backed academic research system and reusable agent skill set. Given a university, a private CV or background summary, research interests, and goals, it will discover relevant researchers, supervisors, laboratories, degree routes, funding, research jobs, and current and historical opportunities across the institution.
+AOIS is a planned academic intelligence system and reusable skill set. Given a university, a CV/background, interests and goals, it will systematically discover researchers, supervisors, labs, programmes, current opportunities, funding routes and historical signals across the institution.
 
-It expands beyond literal keywords into related methods, topics, applications, local terminology, and unexpected departments. Relevant researchers remain in the inventory even when no vacancy is advertised. Discovery comes before ranking; coverage records establish how thoroughly an institution was investigated.
+**Planning baseline v2 is finalized on 25 October 2026. Implementation starts with AOIS-I01: tool and runtime readiness.** The repository currently contains planning documentation; no production AOIS skills, collectors, dossier generator or watches are implemented. Claude's supplied response accepts the review corrections and planning closure; this updated commit is the resulting consolidation, not a claim that Claude independently inspected its exact bytes.
 
-**Current status: planning and documentation.** Repository inspection on 24 October 2026 found one README at `9367b76cde1b9c555d7004c8ec67c8f74fcd8ebe`. This planning change adds shared specifications for review. No AOIS production skills, collectors, schemas, services, tests, or weekly watches have been implemented. Goals below describe intended behavior, not released capabilities.
+## Run from desktop or the web
 
-## Two deliverables, one research core
+| Required surface | Planned execution and private persistence |
+| --- | --- |
+| Codex desktop on Windows or Ubuntu where supported | Local tools and a configured private root outside the Git checkout; cloud checkpoint handoff when wanted |
+| Claude Code desktop on Windows or Ubuntu where supported | Same approved instructions, procedures, private record format and ownership rules |
+| ChatGPT web, including Work | Approved workflow resources plus available tools; private Drive bundles for cross-session continuity |
+| Claude web | Account-enabled workflow package/resources, code execution and connectors; private Drive bundles |
 
-- **A complete personal workbench:** detailed university dossiers, broad researcher inventories, current routes, historical recruitment and project intelligence, private candidate comparisons, selected paper deep dives, application planning, and eventually reliable weekly discovery and change checks.
-- **Reusable skills for other applicants:** configurable CV-and-interest workflows, field and country packs, reproducible evidence and coverage records, and versioned packages for supported Codex, ChatGPT, and Claude surfaces. Each person uses their own private profile, storage, permissions, and accounts.
+Every surface must pass its own readiness checks. A web session does not automatically access an offline computer's folder. A pinned manual workflow bundle can start research before automatic skill installation is available; it is reported as manual mode. Full four-surface readiness is a release gate.
 
-The maintainer's private workflow is the first real pilot. Generalization is evaluated with additional synthetic profiles and other disciplines; personal facts never become public defaults or fixtures.
+## What the complete system will do
 
-## Protected principles
+- Expand interests through field vocabularies: related/broader/narrower topics, methods, modalities, applications, original-language labels and varied query phrases. No embeddings, vector similarity or semantic-search feature.
+- Screen all top-level units and investigate relevant/uncertain departments, centres, institutes, labs, projects, programmes, campuses and affiliates.
+- Keep every plausible researcher, including weak matches and people without an advertised position or known funding. Discovery, vacancy search and ranking remain separate.
+- Search doctoral/direct/integrated/industrial/collaborative routes; research Master's and funded thesis work; RA/GRA/scientific/project roles; teaching/research assistantships; scholarships/fellowships/fee waivers; internships, visiting and host routes.
+- Preserve expired calls, grants, projects, recurring cycles, supervision and thesis history. Grants are signals, not vacancies.
+- Produce a polished self-contained HTML dossier and CSV from structured JSON, with searchable/sortable/filterable tables, coverage/gaps and clickable evidence. XLSX follows later.
+- Support selected paper deep dives, private comparisons, outreach preparation and application planning.
+- Eventually run weekly discovery and meaningful-change checks in an account-supported cloud scheduler with computers off, write private results, and deliver explicitly enabled messenger/email alerts.
 
-1. Researcher discovery, vacancy discovery, and ranking are separate.
-2. Retain plausible researchers, uncertain identities, weak matches, and people without advertised funding.
-3. Screen every top-level unit; traverse relevant and uncertain departments, institutes, centres, labs, groups, programmes, joint units, and affiliates.
-4. Preserve old calls, grants, projects, supervision, and thesis history. Grants are signals; expired calls are history.
-5. Cover PhD, direct/integrated and industrial routes; research Master's and funded thesis work; RA/GRA and scientific/project roles; teaching/research assistantships; scholarships, fellowships, fee waivers/remission; internships and visiting routes.
-6. Evidence supports claims. Unknown is not negative. A researcher count never proves completeness.
-7. Candidate information, search intent, rankings, correspondence, and applications remain private. Secrets never enter Git, chats, artifacts, or logs.
+Researcher counts never prove completeness. Evidence, honest unknowns, reversible identity decisions, checkpoints, budgets and independent audit remain core requirements.
 
-The initial technical field pack includes AI, computer vision, remote sensing, GeoAI, GIS, photogrammetry, geometry, robotics, LLMs, agents, and related methods and applications. The core must support additional fields without applying computing norms to every discipline.
+## Public system; private investigations
 
-## Start with the shared plan
+GitHub holds code, instructions, skills, field/country packs, schemas, tests with synthetic fixtures, documentation and release artifacts. CVs, profiles, person-level findings, opportunities found for an applicant, dossiers, evidence caches, rankings, correspondence and applications stay in local private storage and/or private Google Drive. They are never committed to this repository.
+
+The owner permits sending CV/investigation content to the Claude and OpenAI models performing the work. Training opt-outs and model-context minimization are not AOIS prerequisites. Secrets still never enter Git, chat, model context or artifacts. Search APIs receive appropriate short derived queries.
+
+The maintainer's private case is the first real pilot. Other applicants use their own profiles, goals, stores, credentials and optional field packs; no personal fact or country exclusion becomes a product default.
+
+## Current documents
 
 | Document | Purpose |
 | --- | --- |
-| [Project charter](docs/PROJECT_CHARTER.md) | Users, full product scope, workflow, privacy, outputs, and success conditions |
-| [Implementation roadmap](docs/ROADMAP.md) | Ordered steps, dependencies, acceptance gates, and changes to the earlier plan |
-| [Feature coverage](docs/FEATURE_COVERAGE.md) | Trace every planned feature to its component, task, and verification |
-| [Blueprint v1](docs/architecture/implementation-blueprint-v1.md) | Complete publication-safe technical baseline from 7 October 2026 |
-| [General-purpose design decision](docs/decisions/0001-general-purpose-and-review.md) | Profile isolation, field neutrality, portable skills, and shared review authority |
-| [Operating protocol](docs/manager/OPERATING_PROTOCOL.md) | ChatGPT/Claude review, task boundaries, and exact-revision handoffs |
-| [Existing skills research](docs/research/EXISTING_SKILLS_REVIEW_2026-10-24.md) | Inspected upstream skills, licenses, reuse opportunities, and gaps |
-| [Current planning review](docs/manager/PLANNING_REVIEW_2026-10-24.md) | Inspection evidence, review status, checks, and next action |
+| [Implementation Plan v2](docs/architecture/implementation-plan-v2.md) | Current architecture, private authority, four surfaces and release gates |
+| [Roadmap](docs/ROADMAP.md) | Ordered bounded implementation tasks and legacy-ID crosswalk |
+| [Project charter](docs/PROJECT_CHARTER.md) | Complete scope and workflow |
+| [Feature coverage](docs/FEATURE_COVERAGE.md) | F01–F50 plus finalized owner requirements |
+| [Final decision](docs/decisions/0002-final-runtime-storage-and-scope.md) | Resolved review/owner decisions and superseded proposals |
+| [Planning closure](docs/manager/PLANNING_CLOSURE_2026-10-25.md) | C-01–C-19 dispositions, evidence and closure status |
+| [Operating protocol](docs/manager/OPERATING_PROTOCOL.md) | Owner authorization and ChatGPT/Claude exact-revision review |
+| [First implementation task](docs/tasks/AOIS-I01-tool-readiness.md) | Complete copy/paste task envelope for the local implementer |
+| [Existing skills review](docs/research/EXISTING_SKILLS_REVIEW_2026-10-24.md) | Pinned upstream sources/licenses and adaptation limits |
+| [Historical blueprint](docs/archive/implementation-blueprint-v1.md) | All 40 earlier sections retained as non-authoritative history |
 
-## Development and release boundaries
+AGENTS.md is the only repository-level agent instruction file. Do not add CLAUDE.md or CLAUDE.local.md. Canonical skill source will be .agents/skills; generated Claude and web packages must preserve version equality.
 
-GitHub is the shared technical and review record. Codex Desktop on Windows implements one authorized component at a time. ChatGPT and Claude review exact revisions and record findings and dispositions. The user settles unresolved material disagreements and authorizes consequential actions.
+Use native search/fetch, the existing OpenAlex account/key and Firecrawl first; Apify is an audited bounded fallback. Incremental spending is $0 and only verified free allowances may be consumed. Extra tools, paid services, API billing and hosting require separate approval.
 
-Normal ChatGPT Work research on Ubuntu must run and resume while Windows is offline. Cross-client packaging and Claude compatibility are targets requiring tests on actual supported surfaces. Codex Cloud is out of scope.
+A web UI is an execution surface. A particular repository-backed Codex Cloud environment is an optional route to evaluate only if needed, not a requirement or a blanket prohibition on web research. No such environment is provisioned by this plan.
 
-Start with portable files and a single writer. Add databases or a narrow remote service only after measured need and review. Weekly checks require durable baselines, semantic comparison, failure reporting, budgets, and explicit activation. Outreach remains reviewed preparation until the user authorizes a concrete send or submission.
-
-No installation command is provided yet because there is no AOIS skill release. Public availability of this repository does not itself grant a reuse license; the owner must select the AOIS license and review third-party notices before redistribution.
+No AOIS skill release or installation command exists yet. Owner-selected licensing and upstream notices are required before redistribution. Future notifications, messages and submissions are individually scoped and authorized.
